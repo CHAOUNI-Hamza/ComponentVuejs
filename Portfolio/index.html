@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our Company</title>
+    <script src="https://use.fontawesome.com/213ed15758.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            padding: 100px;
+
+            transition: .5s;
+        }
+
+        .day-mode {
+            background: #fff;
+        }
+
+        .night-mode {
+            background: #333;
+        }
+
+        .night-mode .logo span {
+            color: #fff !important;
+        }
+
+        .night-mode ul li a {
+
+            color: #fff !important;
+
+        }
+
+        .night-mode h2 {
+
+
+            color: #fff;
+
+        }
+
+        .night-mode .chat {
+            background: #333;
+            color: #fff;
+        }
+
+
+        .night-mode h3 {
+            color: #fff;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #00a6f5;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #333 !important;
+        }
+
+        ul {
+            display: flex;
+            gap: 70px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2em;
+            color: #333;
+            transition: 0.5s;
+        }
+
+        .content {
+            position: relative;
+            max-width: 700px;
+            z-index: 10;
+        }
+
+        h3 {
+            font-size: 2em;
+            color: #333;
+            font-weight: 200;
+            transition: .5s;
+        }
+
+        h2 {
+            font-size: 5.5em;
+            color: #333;
+            font-weight: 700;
+            transition: .5s;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+            transition: .5s;
+        }
+
+        button {
+            position: relative;
+            background: #3fb984;
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 15px 35px;
+            font-size: 1.25em;
+            letter-spacing: 0.05em;
+            margin-right: 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .chat {
+            background: transparent;
+            color: #333;
+        }
+
+        .chat .fa {
+            position: relative;
+            color: #00a6f5;
+            font-size: 1.5em;
+            top: 5px;
+            margin-right: 11px;
+        }
+
+        .sci {
+            position: absolute;
+            bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .sci li {
+            list-style: none;
+        }
+
+        .sci li a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .sci li a:hover {
+            color: #00a6f5;
+        }
+
+        .dayNight {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            color: #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .5s;
+            font-size: 2em;
+            border-radius: 50%;
+        }
+
+        .color {
+            position: absolute;
+            right: 3%;
+            max-width: 500px;
+
+        }
+
+        #text {
+            color: #3fb984;
+
+        }
+
+
+
+        .men {
+            position: absolute;
+            right: 2%;
+            max-width: 650px;
+            bottom: 0;
+            animation: mymove 8s ease-in-out infinite;
+        }
+
+        @keyframes mymove {
+
+            0%,
+            100% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(-50px);
+            }
+        }
+    </style>
+</head>
+
+<body id="app">
+    <section class="banner" :class="{ 'day-mode': isDayMode, 'night-mode': isNightMode }">
+        <header>
+            <a href="" class="logo">
+                <span>My</span>PortFolio
+            </a>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Work</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <h3>Hey_</h3>
+            <h2>I am <span id="text">Hamza</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus est exercitationem ut asperiores minus?
+                Quos a omnis laboriosam accusamus velit, ipsa corrupti, expedita repellendus odit natus obcaecati, iure
+                tempore cum.</p>
+            <button>Hire Me</button>
+            <button class="chat"><i class="fa fa-comments-o" aria-hidden="true"></i>Let's Chat</button>
+        </div>
+        <img src="color.png" alt="" class="color">
+        <img src="men.png" alt="" class="men">
+        <ul class="sci">
+            <li>
+                <a href="">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        </ul>
+        <div class="dayNight">
+            <i @click="switchToDay" v-if="isNightMode" class="fa fa-moon-o" aria-hidden="true"></i>
+            <i @click="switchToNight" v-if="isDayMode" class="fa fa-sun-o" aria-hidden="true"></i>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    isDayMode: true,
+                    isNightMode: false
+                }
+            },
+            methods: {
+                switchToDay() {
+                    this.isDayMode = true;
+                    this.isNightMode = false;
+                },
+                switchToNight() {
+                    this.isDayMode = false;
+                    this.isNightMode = true;
+                }
+            }
+        }).mount('#app')
+    </script>
+
+    <script>
+        var typed = new Typed('#text', {
+            strings: ['Developpeur', 'Designer'],
+            typeSpeed: 50,
+        });
+    </script>
+
+
+
+</body>
+
+</html>
